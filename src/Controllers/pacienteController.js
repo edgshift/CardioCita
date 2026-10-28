@@ -36,7 +36,7 @@ const deletePaciente = async (req, res) => {
 };
 
 module.exports = {
-    getPaciente,
+    getPacientes,
     getPacienteById,
     postPaciente,
     updatePaciente,
