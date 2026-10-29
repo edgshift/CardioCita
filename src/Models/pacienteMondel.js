@@ -1,21 +1,44 @@
 const mongoose = require('mongoose')
 
 const patientSchema = new mongoose.Schema({
-    nombre:{
+    nombres:{
         type:String, 
-        require:true
+        required:true,
     },
-    apellido:{
+    apellidos:{
         type:String,
-        require:true
+        required:true
     },
     edad:{
         type:Number,
-        require:true
+        required:true
     },
     cedula:{
         type:String,
-        require:true,
+        trim:true,
+        required:[true, "Insertar cedula sin espacio."],
+        match: [/^\d{11}$/, "La cédula debe contener 11 dígitos sin espacios"]
+    },
+    sexo:{
+        type:String, 
+        required:true,
+        enum:["Femenino", "Masculino"]
+    },
+    tipoEnfermedad: {
+    type: String,
+    required: true,
+    enum: [
+        "Hipertension arterial",
+        "Enfermedad arterial coronaria",
+        "Infarto agudo de miocardio",
+        "Insuficiencia cardiaca",
+        "Arritmia cardiaca",
+        "Fibrilacion auricular",
+        "Enfermedad cerebrovascular (ACV)",
+        "Enfermedad valvular cardiaca",
+        "Enfermedad arterial periferica",
+        "Miocardiopatia"
+    ]
     }
 }, 
 {
