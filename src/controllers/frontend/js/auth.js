@@ -1,4 +1,3 @@
-
 const loginForm = document.getElementById('loginForm');
 
 if (loginForm) {
@@ -29,7 +28,7 @@ if (loginForm) {
 
             message.textContent = 'Inicio de sesión exitoso.';
 
-            window.location.href = 'registrar-paciente.html';
+            window.location.href = 'dashboard.html';
 
         } catch (error) {
             message.textContent = error.message;

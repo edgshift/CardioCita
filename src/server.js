@@ -6,6 +6,7 @@ const connectDB = require('./config/database')
 const authRoutes = require('./routes/authRoutes')
 const patientRoutes = require('./routes/patientRoutes')
 const { notFound, errorHandler } = require('./middlewares/errorHandler')
+const appointmentRoutes = require('./routes/appointmentRoutes')
 
 const app = express()
 
@@ -19,13 +20,16 @@ app.get('/', (req, res) => {
             login: 'POST /api/auth/login',
             perfil: 'GET /api/auth/profile',
             pacientes: 'GET|POST /api/patients',
-            paciente: 'GET|PUT|DELETE /api/patients/:id'
+            paciente: 'GET|PUT|DELETE /api/patients/:id',
+            citas: 'GET|POST /api/appointments',
+            cita: 'GET|PUT|DELETE /api/appointments/:id'
         }
     })
 })
 
 app.use('/api/auth', authRoutes)
 app.use('/api/patients', patientRoutes)
+app.use('/api/appointments', appointmentRoutes)
 
 app.use(notFound)
 app.use(errorHandler)

@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar cita | CardioCita</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/citas.css">
+</head>
+<body>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>CardioCita</h2>
+                <span>Gestión cardiovascular</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link">
+                    <span>⌂</span> Inicio
+                </a>
+
+                <a href="pacientes.html" class="nav-link">
+                    <span>♙</span> Pacientes
+                </a>
+
+                <a href="registrar-paciente.html" class="nav-link">
+                    <span>＋</span> Registrar paciente
+                </a>
+
+                <a href="citas.html" class="nav-link active">
+                    <span>▦</span> Citas médicas
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="logoutButton" class="logout-button">
+                    Cerrar sesión
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="page-header">
+                <div>
+                    <h1>Editar cita</h1>
+                    <p>Actualiza la información de la cita médica.</p>
+                </div>
+
+                <a href="citas.html" class="secondary-button">
+                    Volver al listado
+                </a>
+            </header>
+
+            <section class="appointment-form-section">
+
+                <div class="appointment-form-heading">
+                    <h2>Información de la cita</h2>
+                    <p>Modifica los campos que necesites actualizar.</p>
+                </div>
+
+                <form id="editAppointmentForm">
+
+                    <div class="appointment-form-grid">
+
+                        <div class="form-group full-width">
+                            <label for="paciente">Paciente</label>
+                            <select id="paciente" name="paciente" required>
+                                <option value="">Cargando pacientes...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fecha">Fecha de la cita</label>
+                            <input type="date" id="fecha" name="fecha" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora">Hora de la cita</label>
+                            <input type="time" id="hora" name="hora" required>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="motivo">Motivo de consulta</label>
+                            <textarea
+                                id="motivo"
+                                name="motivo"
+                                rows="4"
+                                maxlength="300"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="estado">Estado de la cita</label>
+                            <select id="estado" name="estado" required>
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="Confirmada">Confirmada</option>
+                                <option value="Completada">Completada</option>
+                                <option value="Cancelada">Cancelada</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <p id="editAppointmentMessage"
+                       class="appointments-message"></p>
+
+                    <div class="appointment-form-actions">
+                        <a href="citas.html" class="secondary-button">
+                            Cancelar
+                        </a>
+
+                        <button
+                            type="submit"
+                            id="updateAppointmentButton"
+                            class="primary-button"
+                        >
+                            Guardar cambios
+                        </button>
+                    </div>
+
+                </form>
+
+            </section>
+
+        </main>
+    </div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/editar-cita.js"></script>
+
+</body>
+</html>

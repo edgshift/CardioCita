@@ -1,51 +1,127 @@
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gestión de pacientes de CardioCita">
     <title>Pacientes | CardioCita</title>
+
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 </head>
+
 <body>
 
-    <main>
-        <section>
-            <h1>Pacientes registrados</h1>
-            <p>Consulta y administra los pacientes registrados en CardioCita.</p>
+    <div class="dashboard-container">
 
-            <div class="form-actions">
-                <a href="registrar-paciente.html">
-                    <button type="button">Registrar nuevo paciente</button>
+        <!-- BARRA LATERAL -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <h2>CardioCita</h2>
+                <span>Gestión Cardiovascular</span>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-link">
+                    <span>⌂</span>
+                    <span>Inicio</span>
                 </a>
-            </div>
 
-            <div id="patientsMessage" role="alert" aria-live="polite"></div>
+                <a href="pacientes.html" class="nav-link active">
+                    <span>♙</span>
+                    <span>Pacientes</span>
+                </a>
 
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Cédula</th>
-                            <th>Nombre completo</th>
-                            <th>Edad</th>
-                            <th>Sexo</th>
-                            <th>Enfermedad</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="patientsTableBody">
-                        <tr>
-                            <td colspan="6">Cargando pacientes...</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </main>
+                <a href="registrar-paciente.html" class="nav-link">
+                    <span>＋</span>
+                    <span>Registrar paciente</span>
+                </a>
+
+                <span class="nav-link nav-link-disabled" aria-disabled="true">
+                    <span>▣</span>
+                    <span>Citas médicas</span>
+                    <small>Próximamente</small>
+                </span>
+
+            </nav>
+
+            <button type="button" id="logoutButton" class="logout-button">
+                Cerrar sesión
+            </button>
+
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="dashboard-main">
+
+            <header class="dashboard-header">
+
+                <div>
+                    <h1>Gestión de pacientes</h1>
+                    <p>Consulta y administra los pacientes registrados en CardioCita.</p>
+                </div>
+
+                <div class="doctor-info">
+                    <span class="doctor-avatar" id="doctorAvatar">M</span>
+
+                    <div>
+                        <strong id="doctorName">Médico</strong>
+                        <small>Personal médico</small>
+                    </div>
+                </div>
+
+            </header>
+
+            <section class="quick-actions">
+
+                <h2>Pacientes registrados</h2>
+
+                <p>Administra la información de los pacientes del centro médico.</p>
+
+                <div class="form-actions">
+                    <a href="registrar-paciente.html">
+                        <button type="button">＋ Registrar nuevo paciente</button>
+                    </a>
+                </div>
+
+                <div id="patientsMessage" role="alert" aria-live="polite"></div>
+
+                <div class="table-container">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cédula</th>
+                                <th>Nombre completo</th>
+                                <th>Edad</th>
+                                <th>Sexo</th>
+                                <th>Enfermedad</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="patientsTableBody">
+                            <tr>
+                                <td colspan="6">Cargando pacientes...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
 
     <script src="../js/config.js"></script>
     <script src="../js/api.js"></script>
+    <script src="../js/navigation.js"></script>
     <script src="../js/listar-pacientes.js"></script>
 
 </body>

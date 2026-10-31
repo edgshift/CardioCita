@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | CardioCita</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Barra lateral -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>CardioCita</h2>
+                <span>Gestión Cardiovascular</span>
+            </div>
+
+            <nav class="sidebar-nav">
+    <a href="dashboard.html" class="nav-link active">
+        <span>⌂</span>
+        <span>Inicio</span>
+    </a>
+
+    <a href="pacientes.html" class="nav-link">
+        <span>♙</span>
+        <span>Pacientes</span>
+    </a>
+
+    <a href="registrar-paciente.html" class="nav-link">
+        <span>＋</span>
+        <span>Registrar paciente</span>
+    </a>
+
+    <a href="citas.html" class="nav-link">
+    <span>▦</span> Citas médicas
+</a>
+
+</nav>
+
+            <button type="button" id="logoutButton" class="logout-button">
+                Cerrar sesión
+            </button>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="dashboard-main">
+
+            <header class="dashboard-header">
+                <div>
+                    <h1>Panel principal</h1>
+                    <p>Bienvenido a CardioCita</p>
+                </div>
+
+                <div class="doctor-info">
+                    <span class="doctor-avatar">M</span>
+                    <div>
+                        <strong id="doctorName">Médico</strong>
+                        <small>Personal médico</small>
+                    </div>
+                </div>
+            </header>
+
+            <section class="welcome-section">
+                <h2>Resumen general</h2>
+                <p>Consulta el estado de los pacientes y las citas médicas.</p>
+                <p id="currentDate"></p>
+            </section>
+
+            <!-- Estadísticas -->
+            <section class="statistics-grid">
+
+                <article class="stat-card">
+                    <div class="stat-icon">♙</div>
+                    <div>
+                        <p>Total de pacientes</p>
+                        <h3 id="totalPatients">--</h3>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon">▣</div>
+                    <div>
+                        <p>Citas de hoy</p>
+                        <h3 id="todayAppointments">--</h3>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon">◷</div>
+                    <div>
+                        <p>Citas pendientes</p>
+                        <h3 id="pendingAppointments">--</h3>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon">✓</div>
+                    <div>
+                        <p>Citas completadas</p>
+                        <h3 id="completedAppointments">--</h3>
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- Accesos rápidos -->
+            <section class="quick-actions">
+                <h2>Accesos rápidos</h2>
+
+                <div class="action-grid">
+                    <a href="registrar-paciente.html" class="action-card">
+                        <span>＋</span>
+                        <div>
+                            <strong>Registrar paciente</strong>
+                            <p>Agregar un nuevo paciente</p>
+                        </div>
+                    </a>
+
+                    <a href="pacientes.html" class="action-card">
+                        <span>♙</span>
+                        <div>
+                            <strong>Ver pacientes</strong>
+                            <p>Consultar pacientes registrados</p>
+                        </div>
+                    </a>
+
+                    <div class="action-card disabled-action">
+                        <span>▣</span>
+                        <div>
+                            <strong>Gestionar citas</strong>
+                            <p>Módulo en desarrollo</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <p id="dashboardMessage" class="dashboard-message"></p>
+
+        </main>
+    </div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/dashboard.js"></script>
+
+</body>
+</html>

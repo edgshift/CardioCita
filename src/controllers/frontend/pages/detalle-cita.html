@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de cita | CardioCita</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/citas.css">
+</head>
+<body>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>CardioCita</h2>
+                <span>Gestión cardiovascular</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link">
+                    <span>⌂</span> Inicio
+                </a>
+
+                <a href="pacientes.html" class="nav-link">
+                    <span>♙</span> Pacientes
+                </a>
+
+                <a href="registrar-paciente.html" class="nav-link">
+                    <span>＋</span> Registrar paciente
+                </a>
+
+                <a href="citas.html" class="nav-link active">
+                    <span>▦</span> Citas médicas
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="logoutButton" class="logout-button">
+                    Cerrar sesión
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="page-header">
+                <div>
+                    <h1>Detalle de cita</h1>
+                    <p>Consulta la información de la cita médica.</p>
+                </div>
+
+                <a href="citas.html" class="secondary-button">
+                    Volver al listado
+                </a>
+            </header>
+
+            <section class="appointment-detail-section">
+
+                <div class="appointment-detail-heading">
+                    <h2>Información de la cita</h2>
+                    <span id="appointmentStatus" class="status-badge">
+                        Cargando...
+                    </span>
+                </div>
+
+                <div class="appointment-detail-grid">
+
+                    <div class="appointment-detail-item">
+                        <span>Paciente</span>
+                        <strong id="detailPatient">Cargando...</strong>
+                    </div>
+
+                    <div class="appointment-detail-item">
+                        <span>Cédula</span>
+                        <strong id="detailCedula">Cargando...</strong>
+                    </div>
+
+                    <div class="appointment-detail-item">
+                        <span>Fecha</span>
+                        <strong id="detailDate">Cargando...</strong>
+                    </div>
+
+                    <div class="appointment-detail-item">
+                        <span>Hora</span>
+                        <strong id="detailTime">Cargando...</strong>
+                    </div>
+
+                    <div class="appointment-detail-item full-width">
+                        <span>Motivo de consulta</span>
+                        <strong id="detailReason">Cargando...</strong>
+                    </div>
+
+                </div>
+
+                <p id="detailAppointmentMessage"
+                   class="appointments-message"></p>
+
+                <div class="appointment-form-actions">
+                    <a href="citas.html" class="secondary-button">
+                        Volver
+                    </a>
+
+                    <button id="editAppointmentButton"
+                            class="primary-button"
+                            disabled>
+                        Editar cita
+                    </button>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/detalle-cita.js"></script>
+
+</body>
+</html>

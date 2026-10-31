@@ -1,0 +1,457 @@
+
+.appointment-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.summary-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.summary-card span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.summary-card strong {
+    color: var(--primary);
+    font-size: 28px;
+}
+
+.appointments-section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    color: var(--text);
+    font-size: 20px;
+    margin: 0 0 6px;
+}
+
+.section-heading p {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin: 0;
+}
+
+.appointments-filters {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.appointments-filters input,
+.appointments-filters select {
+    min-height: 42px;
+    padding: 0 13px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--text);
+    font: inherit;
+}
+
+.appointments-filters input {
+    flex: 1;
+}
+
+.appointments-filters select {
+    min-width: 190px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.appointments-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.appointments-table th {
+    padding: 14px 12px;
+    background: var(--background);
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.appointments-table td {
+    padding: 15px 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: 13px;
+}
+
+.appointments-table tbody tr:hover {
+    background: #F8FAF9;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.status-pendiente {
+    background: #FFF3D9;
+    color: #936515;
+}
+
+.status-confirmada {
+    background: #E5EDE9;
+    color: #315C54;
+}
+
+.status-completada {
+    background: #E5EBF8;
+    color: #385A91;
+}
+
+.status-cancelada {
+    background: #FCE8E8;
+    color: #A33E3E;
+}
+
+.action-button {
+    border: none;
+    background: transparent;
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.action-button:hover {
+    text-decoration: underline;
+}
+
+.cancel-button {
+    color: #B54747;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0 17px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.primary-button {
+    background: var(--primary);
+    color: white;
+    border: 1px solid var(--primary);
+}
+
+.primary-button:hover {
+    background: var(--primary-dark);
+}
+
+.secondary-button {
+    background: white;
+    color: var(--primary);
+    border: 1px solid var(--border);
+}
+
+.appointments-message {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin: 12px 0;
+}
+
+@media (max-width: 900px) {
+    .appointment-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .appointment-summary {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .appointments-section {
+        padding: 15px;
+    }
+
+    .section-heading,
+    .appointments-filters {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .appointments-filters select {
+        width: 100%;
+    }
+}
+
+
+.appointment-form-section {
+    max-width: 850px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+}
+
+.appointment-form-heading {
+    margin-bottom: 28px;
+}
+
+.appointment-form-heading h2 {
+    color: var(--text);
+    font-size: 20px;
+    margin: 0 0 8px;
+}
+
+.appointment-form-heading p {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin: 0;
+}
+
+.appointment-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.appointment-form-grid .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.appointment-form-grid .full-width {
+    grid-column: 1 / -1;
+}
+
+.appointment-form-grid label {
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.appointment-form-grid input,
+.appointment-form-grid select,
+.appointment-form-grid textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--text);
+    font: inherit;
+    font-size: 13px;
+    outline: none;
+}
+
+.appointment-form-grid input:focus,
+.appointment-form-grid select:focus,
+.appointment-form-grid textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(49, 92, 84, 0.10);
+}
+
+.appointment-form-grid textarea {
+    resize: vertical;
+}
+
+.appointment-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+@media (max-width: 600px) {
+    .appointment-form-section {
+        padding: 18px;
+    }
+
+    .appointment-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .appointment-form-grid .full-width {
+        grid-column: auto;
+    }
+
+    .appointment-form-actions {
+        flex-direction: column-reverse;
+    }
+}
+
+.view-button {
+    color: #385A91;
+}
+
+.edit-button {
+    color: var(--primary);
+}
+
+.cancel-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+
+/* =====================================
+   DETALLE DE CITA
+===================================== */
+
+.appointment-detail-section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    max-width: 900px;
+}
+
+.appointment-detail-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 28px;
+}
+
+.appointment-detail-heading h2 {
+    color: var(--text);
+    font-size: 20px;
+    margin: 0;
+}
+
+.appointment-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.appointment-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 17px;
+    background: var(--background);
+    border-radius: 9px;
+}
+
+.appointment-detail-item span {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.appointment-detail-item strong {
+    color: var(--text);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.appointment-detail-item.full-width {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 600px) {
+    .appointment-detail-section {
+        padding: 18px;
+    }
+
+    .appointment-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .appointment-detail-item.full-width {
+        grid-column: auto;
+    }
+
+    .appointment-detail-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+/* =====================================
+   ACCIONES DE LA TABLA DE CITAS
+===================================== */
+
+.appointment-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.action-button {
+    border: none;
+    background: transparent;
+    padding: 7px 9px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.view-button {
+    color: #385A91;
+}
+
+.view-button:hover {
+    background: #EAF0FA;
+}
+
+.edit-button {
+    color: var(--primary);
+}
+
+.edit-button:hover {
+    background: var(--primary-light);
+}
+
+.cancel-button {
+    color: #B54747;
+}
+
+.cancel-button:hover {
+    background: #FCECEC;
+}
+
+.cancel-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}

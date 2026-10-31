@@ -1,5 +1,7 @@
 {
     "files.exclude": {
         "**/.git": false
-    }
+    },
+    "liveServer.settings.port": 5501,
+    "liveServer.settings.host": "127.0.0.1"
 }

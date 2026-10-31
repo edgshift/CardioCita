@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citas médicas | CardioCita</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/citas.css">
+</head>
+<body>
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>CardioCita</h2>
+                <span>Gestión cardiovascular</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link">
+                    <span>⌂</span> Inicio
+                </a>
+
+                <a href="pacientes.html" class="nav-link">
+                    <span>♙</span> Pacientes
+                </a>
+
+                <a href="registrar-paciente.html" class="nav-link">
+                    <span>＋</span> Registrar paciente
+                </a>
+
+                <a href="citas.html" class="nav-link active">
+                    <span>▦</span> Citas médicas
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="logoutButton" class="logout-button">
+                    Cerrar sesión
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="page-header">
+                <div>
+                    <h1>Citas médicas</h1>
+                    <p>Administra las citas de tus pacientes.</p>
+                </div>
+
+                <a href="registrar-cita.html" class="primary-button">
+                    + Nueva cita
+                </a>
+            </header>
+
+            <section class="appointment-summary">
+                <div class="summary-card">
+                    <span>Total de citas</span>
+                    <strong id="totalAppointments">0</strong>
+                </div>
+
+                <div class="summary-card">
+                    <span>Pendientes</span>
+                    <strong id="pendingAppointments">0</strong>
+                </div>
+
+                <div class="summary-card">
+                    <span>Confirmadas</span>
+                    <strong id="confirmedAppointments">0</strong>
+                </div>
+
+                <div class="summary-card">
+                    <span>Completadas</span>
+                    <strong id="completedAppointments">0</strong>
+                </div>
+            </section>
+
+            <section class="appointments-section">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Listado de citas</h2>
+                        <p>Consulta y administra las citas registradas.</p>
+                    </div>
+
+                    <button id="refreshAppointments" class="secondary-button">
+                        Actualizar
+                    </button>
+                </div>
+
+                <div class="appointments-filters">
+                    <input
+                        type="search"
+                        id="searchAppointment"
+                        placeholder="Buscar por paciente..."
+                    >
+
+                    <select id="filterStatus">
+                        <option value="">Todos los estados</option>
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="Confirmada">Confirmada</option>
+                        <option value="Completada">Completada</option>
+                        <option value="Cancelada">Cancelada</option>
+                    </select>
+                </div>
+
+                <p id="appointmentsMessage" class="appointments-message"></p>
+
+                <div class="table-container">
+                    <table class="appointments-table">
+                        <thead>
+                            <tr>
+                                <th>Paciente</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Motivo</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="appointmentsTableBody">
+                            <tr>
+                                <td colspan="6">Cargando citas...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/citas.js"></script>
+
+</body>
+</html>
