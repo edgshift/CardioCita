@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detalle del paciente | CardioCita</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <main>
+        <section>
+            <h1>Detalle del paciente</h1>
+
+            <p>
+                Información registrada del paciente.
+            </p>
+
+            <div id="patientMessage"
+                 role="alert"
+                 aria-live="polite">
+            </div>
+
+            <div id="patientDetails">
+
+                <fieldset>
+                    <legend>Datos personales</legend>
+
+                    <p>
+                        <strong>Nombres:</strong>
+                        <span id="nombres">Cargando...</span>
+                    </p>
+
+                    <p>
+                        <strong>Apellidos:</strong>
+                        <span id="apellidos">Cargando...</span>
+                    </p>
+
+                    <p>
+                        <strong>Cédula:</strong>
+                        <span id="cedula">Cargando...</span>
+                    </p>
+
+                    <p>
+                        <strong>Edad:</strong>
+                        <span id="edad">Cargando...</span>
+                    </p>
+
+                    <p>
+                        <strong>Fecha de nacimiento:</strong>
+                        <span id="fechaNacimiento">No registrada</span>
+                    </p>
+
+                    <p>
+                        <strong>Sexo:</strong>
+                        <span id="sexo">Cargando...</span>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Información médica</legend>
+
+                    <p>
+                        <strong>Tipo de enfermedad:</strong>
+                        <span id="tipoEnfermedad">Cargando...</span>
+                    </p>
+                </fieldset>
+
+            </div>
+
+            <div class="form-actions">
+
+                <button type="button" id="editButton">
+                    Editar paciente
+                </button>
+
+                <button type="button" id="deleteButton">
+                    Eliminar paciente
+                </button>
+
+                <a href="pacientes.html">
+                    <button type="button">
+                        Volver a pacientes
+                    </button>
+                </a>
+
+            </div>
+
+        </section>
+    </main>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/detalle-paciente.js"></script>
+
+</body>
+</html>

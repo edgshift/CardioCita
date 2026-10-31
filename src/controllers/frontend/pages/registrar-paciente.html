@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Registro de pacientes de CardioCita">
+    <title>Registrar paciente | CardioCita</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+
+<body>
+
+    <main>
+        <section>
+            <h1>Registro de pacientes</h1>
+            <p>Complete los datos para registrar un nuevo paciente.</p>
+
+            <form id="patientForm">
+
+                <!-- DATOS PERSONALES -->
+                <fieldset>
+                    <legend>Datos personales</legend>
+
+                    <div>
+                        <label for="nombres">Nombres</label>
+                        <input
+                            type="text"
+                            id="nombres"
+                            name="nombres"
+                            placeholder="Ingrese los nombres"
+                            required
+                        >
+                        <small>Escriba los nombres del paciente.</small>
+                    </div>
+
+                    <div>
+                        <label for="apellidos">Apellidos</label>
+                        <input
+                            type="text"
+                            id="apellidos"
+                            name="apellidos"
+                            placeholder="Ingrese los apellidos"
+                            required
+                        >
+                        <small>Escriba los apellidos del paciente.</small>
+                    </div>
+
+                    <div>
+                        <label for="cedula">Cédula</label>
+                        <input
+                            type="text"
+                            id="cedula"
+                            name="cedula"
+                            placeholder="00000000000"
+                            maxlength="11"
+                            pattern="[0-9]{11}"
+                            inputmode="numeric"
+                            required
+                        >
+                        <small>Ingrese los 11 dígitos de la cédula sin guiones.</small>
+                    </div>
+
+                    <div>
+                        <label for="edad">Edad</label>
+                        <input
+                            type="number"
+                            id="edad"
+                            name="edad"
+                            placeholder="Ingrese la edad"
+                            min="0"
+                            max="120"
+                            step="1"
+                            required
+                        >
+                        <small>La edad debe ser un número entero entre 0 y 120.</small>
+                    </div>
+
+                    <div>
+                        <label for="fechaNacimiento">Fecha de nacimiento</label>
+                        <input
+                            type="date"
+                            id="fechaNacimiento"
+                            name="fechaNacimiento"
+                        >
+                        <small>Este campo es opcional. No puede seleccionar una fecha futura.</small>
+                    </div>
+
+                    <div>
+                        <label for="sexo">Sexo</label>
+
+                        <select id="sexo" name="sexo" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                        </select>
+
+                        <small>Seleccione el sexo del paciente.</small>
+                    </div>
+
+                </fieldset>
+
+                <!-- INFORMACIÓN MÉDICA -->
+                <fieldset>
+                    <legend>Información médica</legend>
+
+                    <div>
+                        <label for="tipoEnfermedad">Tipo de enfermedad</label>
+
+                        <select
+                            id="tipoEnfermedad"
+                            name="tipoEnfermedad"
+                            required
+                        >
+                            <option value="">Seleccione una enfermedad</option>
+
+                            <option value="Hipertension arterial">
+                                Hipertensión arterial
+                            </option>
+
+                            <option value="Enfermedad arterial coronaria">
+                                Enfermedad arterial coronaria
+                            </option>
+
+                            <option value="Infarto agudo de miocardio">
+                                Infarto agudo de miocardio
+                            </option>
+
+                            <option value="Insuficiencia cardiaca">
+                                Insuficiencia cardíaca
+                            </option>
+
+                            <option value="Arritmia cardiaca">
+                                Arritmia cardíaca
+                            </option>
+
+                            <option value="Fibrilacion auricular">
+                                Fibrilación auricular
+                            </option>
+
+                            <option value="Enfermedad cerebrovascular (ACV)">
+                                Enfermedad cerebrovascular (ACV)
+                            </option>
+
+                            <option value="Enfermedad valvular cardiaca">
+                                Enfermedad valvular cardíaca
+                            </option>
+
+                            <option value="Enfermedad arterial periferica">
+                                Enfermedad arterial periférica
+                            </option>
+
+                            <option value="Miocardiopatia">
+                                Miocardiopatía
+                            </option>
+
+                        </select>
+
+                        <small>Seleccione una de las enfermedades disponibles.</small>
+                    </div>
+
+                </fieldset>
+
+                <!-- MENSAJES -->
+                <div id="formMessage" role="alert" aria-live="polite"></div>
+
+                <!-- BOTONES -->
+                <div>
+                    <button type="reset">Limpiar formulario</button>
+                    <button type="submit">Registrar paciente</button>
+
+                    <a href="pacientes.html">
+        <button type="button">Ver pacientes registrados</button>
+    </a>
+    
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+<script src="../js/config.js"></script>
+<script src="../js/api.js"></script>
+<script src="../js/pacientes.js"></script>
+
+</body>
+</html>

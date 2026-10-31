@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes | CardioCita</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <main>
+        <section>
+            <h1>Pacientes registrados</h1>
+            <p>Consulta y administra los pacientes registrados en CardioCita.</p>
+
+            <div class="form-actions">
+                <a href="registrar-paciente.html">
+                    <button type="button">Registrar nuevo paciente</button>
+                </a>
+            </div>
+
+            <div id="patientsMessage" role="alert" aria-live="polite"></div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cédula</th>
+                            <th>Nombre completo</th>
+                            <th>Edad</th>
+                            <th>Sexo</th>
+                            <th>Enfermedad</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="patientsTableBody">
+                        <tr>
+                            <td colspan="6">Cargando pacientes...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/listar-pacientes.js"></script>
+
+</body>
+</html>
